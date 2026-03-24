@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<FinalDraft DocumentType="Script" Template="No" Version="1">
+  <Content>
+    <Paragraph Type="Action">
+      <Text>FADE IN:</Text>
+    </Paragraph>
+    <Paragraph Type="Scene Heading">
+      <Text>EXT. CAMPFIRE - NIGHT</Text>
+    </Paragraph>
+    <Paragraph Type="Action">
+      <Text>A FATHER and his young SON sit beside a crackling campfire. Stars crowd the sky above.</Text>
+    </Paragraph>
+    <Paragraph Type="Character">
+      <Text>SON</Text>
+    </Paragraph>
+    <Paragraph Type="Parenthetical">
+      <Text>(quietly)</Text>
+    </Paragraph>
+    <Paragraph Type="Dialogue">
+      <Text>Tell me the story again, Dad.</Text>
+    </Paragraph>
+    <Paragraph Type="Character">
+      <Text>FATHER</Text>
+    </Paragraph>
+    <Paragraph Type="Dialogue">
+      <Text Style="Italic">Which</Text><Text> one?</Text>
+    </Paragraph>
+    <Paragraph Type="Character">
+      <Text>SON</Text>
+    </Paragraph>
+    <Paragraph Type="Dialogue">
+      <Text>The one with the </Text><Text Style="Bold">big fish</Text><Text>.</Text>
+    </Paragraph>
+    <Paragraph Type="Character">
+      <Text>FATHER</Text>
+    </Paragraph>
+    <Paragraph Type="Parenthetical">
+      <Text>(smiling)</Text>
+    </Paragraph>
+    <Paragraph Type="Dialogue">
+      <Text>That one always gets you.</Text>
+    </Paragraph>
+    <Paragraph Type="Action">
+      <Text>He leans back and stares at the fire.</Text>
+    </Paragraph>
+    <Paragraph Type="Action">
+      <Text>THE LEGEND OF EDWARD BLOOM</Text>
+    </Paragraph>
+    <Paragraph Type="Transition">
+      <Text>CUT TO:</Text>
+    </Paragraph>
+    <Paragraph Type="Scene Heading">
+      <Text>INT. HOSPITAL ROOM - DAY</Text>
+    </Paragraph>
+    <Paragraph Type="Action">
+      <Text>Sunlight filters through thin curtains. EDWARD BLOOM, 70s, lies in bed, his wife SANDRA at his side.</Text>
+    </Paragraph>
+    <Paragraph Type="Character">
+      <Text>EDWARD (V.O.)</Text>
+    </Paragraph>
+    <Paragraph Type="Dialogue">
+      <Text>Every man has a story. Mine just happens to be </Text><Text Style="Underline">true</Text><Text>.</Text>
+    </Paragraph>
+    <Paragraph Type="Transition">
+      <Text>CUT TO:</Text>
+    </Paragraph>
+    <Paragraph Type="Scene Heading">
+      <Text>EXT. RIVER - DAWN</Text>
+    </Paragraph>
+    <Paragraph Type="Action">
+      <Text>A boy of TEN stands on a muddy bank, fishing rod in hand.</Text>
+    </Paragraph>
+    <Paragraph Type="Scene Heading">
+      <Text>EXT. RIVER - LATER</Text>
+    </Paragraph>
+    <Paragraph Type="Character">
+      <Text>YOUNG EDWARD</Text>
+    </Paragraph>
+    <Paragraph Type="Parenthetical">
+      <Text>(to himself)</Text>
+    </Paragraph>
+    <Paragraph Type="Dialogue">
+      <Text>I&apos;m going to catch you today.</Text>
+    </Paragraph>
+    <Paragraph Type="Action">
+      <Text>He casts the line. It disappears into dark water.</Text>
+    </Paragraph>
+    <Paragraph Type="Transition">
+      <Text>FADE TO BLACK.</Text>
+    </Paragraph>
+  </Content>
+  <TitlePage>
+    <Content>
+      <Paragraph Alignment="Center"><Text>Big Fish</Text></Paragraph>
+      <Paragraph Alignment="Center"><Text>Written by</Text></Paragraph>
+      <Paragraph Alignment="Center"><Text>John August</Text></Paragraph>
+      <Paragraph Alignment="Center"><Text>Based on the novel by Daniel Wallace</Text></Paragraph>
+      <Paragraph Alignment="Left"><Text>Agency Name
+Address Line 1
+Address Line 2</Text></Paragraph>
+    </Content>
+  </TitlePage>
+</FinalDraft>
