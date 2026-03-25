@@ -19,9 +19,13 @@
   "categories": [
     "Other"
   ],
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#1e2028",
+    "theme": "dark"
+  },
   "engines": {
-    "vscode": "^1.85.0",
-    "node": ">=18.0.0"
+    "vscode": "^1.85.0"
   },
   "main": "./extension.js",
   "bin": {
@@ -57,6 +61,7 @@
     "vscode:prepublish": "echo 'No bundling required'"
   },
   "devDependencies": {
-    "@types/vscode": "^1.85.0"
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.7.1"
   }
 }

@@ -1,7 +1,11 @@
 .vscode-test/
+.github/
+.venv/
 node_modules/
 test/
 examples/
+bin/
+images/gen_icon.py
 .gitignore
 .eslintrc*
 *.fountain
