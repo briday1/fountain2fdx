@@ -1,0 +1,83 @@
+#!/usr/bin/env node
+
+/**
+ * fountain2fdx CLI
+ *
+ * Usage:
+ *   fountain2fdx <input.fountain> [output.fdx]
+ *
+ * If no output path is given the FDX XML is written to stdout.
+ */
+
+'use strict';
+
+const fs = require('fs');
+const path = require('path');
+const { fountain2fdx } = require('../src/index');
+
+const args = process.argv.slice(2);
+
+if (args.length === 0 || args.includes('--help') || args.includes('-h')) {
+  process.stdout.write(
+    [
+      'Usage: fountain2fdx <input.fountain> [output.fdx]',
+      '',
+      'Convert a Fountain screenplay file to Final Draft FDX format.',
+      '',
+      'Arguments:',
+      '  input.fountain   Path to the source .fountain file',
+      '  output.fdx       Path for the output .fdx file (optional)',
+      '                   If omitted, FDX XML is written to stdout.',
+      '',
+      'Options:',
+      '  -h, --help       Show this help message',
+      '  -v, --version    Show version number',
+      '',
+    ].join('\n')
+  );
+  process.exit(0);
+}
+
+if (args.includes('--version') || args.includes('-v')) {
+  // eslint-disable-next-line node/no-missing-require
+  const { version } = require('../package.json');
+  process.stdout.write(version + '\n');
+  process.exit(0);
+}
+
+const inputPath = args[0];
+const outputPath = args[1] || null;
+
+if (!fs.existsSync(inputPath)) {
+  process.stderr.write(`fountain2fdx: error: file not found: ${inputPath}\n`);
+  process.exit(1);
+}
+
+let fountainText;
+try {
+  fountainText = fs.readFileSync(inputPath, 'utf8');
+} catch (err) {
+  process.stderr.write(`fountain2fdx: error reading file: ${err.message}\n`);
+  process.exit(1);
+}
+
+let fdxContent;
+try {
+  fdxContent = fountain2fdx(fountainText);
+} catch (err) {
+  process.stderr.write(`fountain2fdx: conversion error: ${err.message}\n`);
+  process.exit(1);
+}
+
+if (outputPath) {
+  try {
+    fs.writeFileSync(outputPath, fdxContent, 'utf8');
+    const rel = path.relative(process.cwd(), outputPath);
+    process.stdout.write(`Converted: ${inputPath} → ${rel}\n`);
+  } catch (err) {
+    process.stderr.write(`fountain2fdx: error writing file: ${err.message}\n`);
+    process.exit(1);
+  }
+} else {
+  process.stdout.write(fdxContent);
+}

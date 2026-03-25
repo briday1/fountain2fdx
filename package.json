@@ -1,0 +1,62 @@
+{
+  "name": "fountain2fdx",
+  "displayName": "Fountain to FDX",
+  "description": "Convert Fountain screenplay files (.fountain) to Final Draft XML format (.fdx)",
+  "version": "0.1.0",
+  "publisher": "briday1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/briday1/fountain2fdx.git"
+  },
+  "keywords": [
+    "fountain",
+    "fdx",
+    "screenplay",
+    "final draft",
+    "screenwriting"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "engines": {
+    "vscode": "^1.85.0",
+    "node": ">=18.0.0"
+  },
+  "main": "./extension.js",
+  "bin": {
+    "fountain2fdx": "./bin/fountain2fdx"
+  },
+  "activationEvents": [],
+  "contributes": {
+    "commands": [
+      {
+        "command": "fountain2fdx.convertFile",
+        "title": "Fountain to FDX: Convert File"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "fountain2fdx.convertFile",
+          "when": "resourceExtname == .fountain",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "fountain2fdx.convertFile",
+          "when": "resourceExtname == .fountain",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "test": "node --test test/parser.test.js test/converter.test.js",
+    "vscode:prepublish": "echo 'No bundling required'"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0"
+  }
+}
