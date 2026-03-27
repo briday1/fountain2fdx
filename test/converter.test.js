@@ -135,7 +135,7 @@ describe('paragraph type mapping', () => {
 describe('text content in FDX', () => {
   it('includes the scene heading text inside a Text element', () => {
     const out = fdx('INT. COFFEE SHOP - DAY');
-    assert.ok(out.includes('<Text>INT. COFFEE SHOP - DAY</Text>'));
+    assert.ok(out.includes('<Text Style="AllCaps">INT. COFFEE SHOP - DAY</Text>'));
   });
 
   it('escapes XML special characters', () => {

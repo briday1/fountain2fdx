@@ -83,15 +83,19 @@ function parseInlineMarkup(text) {
 
 /**
  * Render a text string as one or more FDX <Text> XML elements.
+ *
  * @param {string} text
+ * @param {string|null} defaultStyle - Style attribute for plain (unstyled) runs.
+ *   Pass 'AllCaps' for Scene Heading / Character, '' for everything else.
  * @returns {string} XML fragment
  */
-function renderTextElements(text) {
+function renderTextElements(text, defaultStyle) {
   return parseInlineMarkup(text)
     .map(({ text: t, style }) => {
       const escaped = escapeXml(t);
-      return style
-        ? `<Text Style="${style}">${escaped}</Text>`
+      const resolvedStyle = style !== null ? style : defaultStyle;
+      return resolvedStyle !== undefined && resolvedStyle !== null
+        ? `<Text Style="${resolvedStyle}">${escaped}</Text>`
         : `<Text>${escaped}</Text>`;
     })
     .join('');
@@ -108,8 +112,13 @@ function tokenToParagraph(token) {
   const fdxType = FDX_TYPE_MAP[token.type];
   if (!fdxType) return null;
 
-  const textXml = renderTextElements(token.text || '');
-  return `    <Paragraph Type="${fdxType}">\n      ${textXml}\n    </Paragraph>`;
+  // Scene Heading and Character text is rendered AllCaps; all other plain runs
+  // get an explicit empty Style attribute to match Final Draft conventions.
+  const isAllCaps = token.type === 'scene_heading' || token.type === 'character';
+  const defaultStyle = isAllCaps ? 'AllCaps' : '';
+
+  const textXml = renderTextElements(token.text || '', defaultStyle);
+  return `    <Paragraph Type="${fdxType}" Alignment="Left">\n      ${textXml}\n    </Paragraph>`;
 }
 
 /**

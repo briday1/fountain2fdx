@@ -71,12 +71,6 @@ draw_page(px2, py2, (232, 238, 248, 255), (190, 198, 218, 255), "FDX", font_fdx)
 for y_off in [26, 30, 34, 38, 42]:
     d.line([(px2+5, py2+y_off), (px2+30, py2+y_off)], fill=LINE_COLOR, width=1)
 
-# Bottom caption
-label = "fountain \u2192 fdx"
-bbox = d.textbbox((0, 0), label, font=font_label)
-lw = bbox[2] - bbox[0]
-d.text(((SIZE - lw) // 2, 94), label, font=font_label, fill=(160, 170, 190, 220))
-
 out = os.path.join(os.path.dirname(__file__), "icon.png")
 img.save(out)
 print("Saved:", out)
